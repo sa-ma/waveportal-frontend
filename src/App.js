@@ -192,21 +192,21 @@ export default function App() {
                         />
                     </label>
 
-                    <button disabled={loading} className='waveButton' type='submit'>
+                    <button disabled={loading || !currentAccount} className='button' type='submit'>
                         <span>Wave at Me</span>{' '}
                         <span role='img' aria-label='hello'>
                             👋
                         </span>
                     </button>
                 </form>
-                <p className='loading'>{loading && 'Please wait. Processing wave...'}</p>
-                <p className='error'>{!loading && error && `${error}. Please try again.`}</p>
-
                 {!currentAccount && (
-                    <button onClick={connectWallet} className='waveButton'>
+                    <button type='button' onClick={connectWallet} className='button'>
                         Connect Metamask
                     </button>
                 )}
+                <p className='loading'>{loading && 'Please wait. Processing wave...'}</p>
+                <p className='error'>{!loading && error && `${error}. Please try again.`}</p>
+
                 <h3>Total Waves: {allWaves.length}</h3>
                 {allWaves && (
                     <ul className='wave-list'>
