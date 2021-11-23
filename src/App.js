@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import { abi } from './utils/WavePortal.json';
 import './App.css';
 
-const contractAddress = '0xeDC70110062E7c10f118133599675183C466E087';
+const contractAddress = '0x03ded5CE9429BA5eCDaA27BD5870C388EB8f4333';
 const contractABI = abi;
 
 export default function App() {
@@ -151,8 +151,6 @@ export default function App() {
 
                 await waveTxn.wait();
                 console.log('Mined -- ', waveTxn.hash);
-
-                getAllWaves();
             } else {
                 console.log("Ethereum object doesn't exist!");
             }
