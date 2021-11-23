@@ -200,7 +200,7 @@ export default function App() {
                     </button>
                 </form>
                 <p className='loading'>{loading && 'Please wait. Processing wave...'}</p>
-                <p className='error'>{!loading && `${error}. Please try again.`}</p>
+                <p className='error'>{!loading && error && `${error}. Please try again.`}</p>
 
                 {!currentAccount && (
                     <button onClick={connectWallet} className='waveButton'>
