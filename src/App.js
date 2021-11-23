@@ -68,7 +68,6 @@ export default function App() {
     const getAllWaves = async () => {
         try {
             setLoading(true);
-            setError('');
             const { ethereum } = window;
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
@@ -92,7 +91,6 @@ export default function App() {
             }
         } catch (error) {
             console.log(error);
-            setError('Error getting waves');
         } finally {
             setLoading(false);
         }
